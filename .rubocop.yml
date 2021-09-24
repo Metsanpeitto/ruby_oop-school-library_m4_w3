@@ -1,4 +1,5 @@
 AllCops:
+  TargetRubyVersion: 3.0
   NewCops: enable
   Exclude:
     - "Guardfile"
@@ -51,4 +52,4 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: false
   
-TargetRubyVersion: 2.5
+

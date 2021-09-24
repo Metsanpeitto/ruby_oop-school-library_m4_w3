@@ -1,11 +1,10 @@
 class Student < Person
-   def initialize(:classroom)
+  def initialize(classroom)
     super
-    @classroom = :classroom
- end
+    @classroom = classroom
+  end
 
- def play_hookey
+  def play_hookey
     "¯\(ツ)/¯"
- end  
-
-end    
+  end
+end
