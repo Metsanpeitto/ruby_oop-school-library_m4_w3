@@ -1,13 +1,12 @@
 class Person
   attr_reader :rentals
 
-  def initialize(age, parent_permission = [true], name = 'Unknown')
+  def initialize(age, parent_permission = nil, name = 'Unknown')
     @id = Time.now.to_i
     @name = name
     @age = age
-    @parent_merission = parent_permission
+    @parent_permission = parent_permission
     @rentals = []
-    rental.person = self
   end
 
   def id_get
