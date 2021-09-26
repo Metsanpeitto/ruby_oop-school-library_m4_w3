@@ -1,10 +1,7 @@
-require './runner'
+require_relative './app'
 
-def play
-  run = Run.new
-  run.start
+def run
+  App.new
 end
 
-
-
-play
+run
