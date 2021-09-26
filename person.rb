@@ -1,5 +1,5 @@
 class Person
-  attr_reader :rentals
+  attr_accessor :rentals, :id, :age, :name
 
   def initialize(age, parent_permission = nil, name = 'Unknown')
     @id = Time.now.to_i
@@ -7,26 +7,6 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @rentals = []
-  end
-
-  def id_get
-    @id
-  end
-
-  def name_get
-    @name
-  end
-
-  def age_get
-    @age
-  end
-
-  def name_set(name)
-    @name = name
-  end
-
-  def age_set(age)
-    @name = age
   end
 
   def can_use_services?
