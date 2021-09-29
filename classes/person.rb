@@ -1,7 +1,7 @@
 class Person
   attr_accessor :rentals, :id, :age, :name
 
-  def initialize(age, parent_permission = nil, name = 'Unknown')
+  def initialize(age, parent_permission = true, name = 'Unknown')
     @id = Time.now.to_i
     @name = name
     @age = age
@@ -13,8 +13,13 @@ class Person
     is_of_age? && parent_permission == true
   end
 
-  def add_rental(_rentals)
+  def add_rental(rental)
     @rentals << rental
+  end
+
+  def from_json(data)
+    @id = data['id']
+    @rentals = data['rentals']
   end
 
   private

@@ -6,6 +6,7 @@ require_relative './creators/book'
 require_relative './creators/person'
 require_relative './creators/rental'
 require_relative './displayers/rentals'
+require_relative './store/store'
 
 class App
   include Texts
@@ -17,11 +18,11 @@ class App
   end
 
   def loop
+    obtain_data
     Texts.text_intro
-    # number = gets.chomp
-    number = '3'
+    number = gets.chomp
     running = true
-    puts number
+    
     while running == true
       case number
       when '0'
@@ -38,20 +39,23 @@ class App
 
       when '3'
         feature_create_person
-        number = '4'
+        number = '0'
 
       when '4'
         feature_create_book
-        number = '5'
+        number = '0'
 
       when '5'
         feature_create_rental
-        number = '6'
+        number = '0'
 
       when '6'
         list_rentals
         number = '0'
 
+      when '7'
+        save_data
+        running = false
       else
         Texts.text_intro
       end
