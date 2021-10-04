@@ -9,6 +9,7 @@ class Person
     @name = parameters[:name] || 'Unknown'
     @age = parameters[:age]
     @parent_permission = parameters.fetch(:parent_permission, true)
+    @corrector = Corrector.new
   end
 
   def can_use_services?
@@ -16,8 +17,7 @@ class Person
   end
 
   def validate_name
-    corrector = Corrector.new
-    @name = corrector.correct_name @name
+    @name = @corrector.correct_name @name
   end
 
   private
