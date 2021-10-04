@@ -2,19 +2,19 @@ class Rental
   attr_accessor :date
   attr_reader :book, :person
 
-  def initialize(params)
-    @date = params[:date]
-    @book = params[:book]
-    @person = params[:person]
-  end
-
-  def books=(book)
+  def initialize(date)
+    @date = date
     @book = book
-    book.rentals << self unless book.rentals.include?(self)
+    @person = person
   end
 
-  def persons=(person)
+  def book=(book)
+    @book = book
+    book.add_rental(self)
+  end
+
+  def person=(person)
     @person = person
-    person.rentals << self unless person.rentals.include?(self)
+    person.add_rental(self)
   end
 end

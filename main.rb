@@ -5,6 +5,4 @@ def play
   run.start
 end
 
-
-
 play
