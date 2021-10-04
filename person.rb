@@ -1,33 +1,16 @@
 class Person
-  def initialize(age, parent_permission: true, name: 'Unknown')
+  attr_accessor :name, :age
+  attr_reader :id
+
+  def initialize(parameters)
     @id = Time.now.to_i
-    @name = name
-    @age = age
-    @parent_permission = parent_permission
-  end
-
-  def id_get
-    @id
-  end
-
-  def name_get
-    @name
-  end
-
-  def age_get
-    @age
-  end
-
-  def name_set(name)
-    @name = name
-  end
-
-  def age_set(age)
-    @name = age
+    @name = parameters[:name] || 'Unknown'
+    @age = parameters[:age]
+    @parent_permission = parameters.fetch(:parent_permission, true)
   end
 
   def can_use_services?
-    is_of_age? && parent_permission == true
+    of_age? || parent_permission == true
   end
 
   private

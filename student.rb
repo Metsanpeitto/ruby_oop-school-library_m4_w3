@@ -1,7 +1,9 @@
+require_relative 'person'
+
 class Student < Person
-  def initialize(classroom)
+  def initialize(params)
     super
-    @classroom = classroom
+    @classroom = params[:classroom]
   end
 
   def play_hookey
