@@ -6,6 +6,3 @@ class Corrector
     str[0, 10]
   end
 end
-
-corrector = Corrector.new
-puts corrector.correct_name('julianMacarenoLo')
