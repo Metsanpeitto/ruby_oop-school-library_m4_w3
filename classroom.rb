@@ -2,7 +2,7 @@ class Classroom
   attr_accessor :label
   attr_reader :students
 
-  def initialize(_name)
+  def initialize()
     @label = label
     @students = []
     student.classroom = self
