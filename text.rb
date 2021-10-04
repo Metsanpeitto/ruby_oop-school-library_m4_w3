@@ -34,7 +34,7 @@ class Text
 
   def text_cp6
     puts 'What is the classroom?'
-  end  
+  end
 
   def text_cb1
     puts 'What is the title of the book:'
