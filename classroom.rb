@@ -2,8 +2,8 @@ class Classroom
   attr_accessor :label
   attr_reader :students
 
-  def initialize()
-    @label = label
+  def initialize(params)
+    @label = params[:label]
     @students = []
     student.classroom = self
   end
