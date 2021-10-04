@@ -1,9 +1,9 @@
-class Student < Person
-  attr_reader :classroom
+require_relative 'person'
 
-  def initialize(classroom)
+class Student < Person
+  def initialize(params)
     super
-    @classroom = classroom
+    @classroom = params[:classroom]
   end
 
   def play_hookey
