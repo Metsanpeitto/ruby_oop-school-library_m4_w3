@@ -111,7 +111,6 @@ class App
   def feature_create_book
     @text.text_cb1
     title = gets.chomp
-    @text.text_cb2
     author = gets.chomp
     create_book(title, author)
     @text.success('book')
