@@ -39,6 +39,8 @@ class App
         number = feature_create_rental
       when '6'
         number = list_rentals
+      when '7'
+        running = false
       end
     end
   end
