@@ -3,6 +3,7 @@ require_relative '../classes/corrector'
 require_relative '../classes/person'
 require_relative './student'
 
+# rubocop:disable all
 def create_person(role, age, name, _people)
   if role && age && name
     corrector = Corrector.new
@@ -16,8 +17,7 @@ def create_person(role, age, name, _people)
       Texts.success_teacher
     else
       Texts.text_cp4
-      # parent_permission = gets.chomp
-      parent_permission = 'y'
+      parent_permission = gets.chomp
       permission = true
       permission = false if parent_permission.downcase == 'n'
       user = Person.new(age, permission, filtered_name)
@@ -28,3 +28,4 @@ def create_person(role, age, name, _people)
     @people << person
   end
 end
+# rubocop:enable all

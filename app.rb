@@ -16,17 +16,16 @@ class App
     loop
   end
 
+  # rubocop:disable all
   def loop
     Texts.text_intro
     number = gets.chomp
     running = true
-    puts number
     while running == true
       case number
       when '0'
         Texts.text_intro
         number = gets.chomp
-
       when '1'
         number = list_books
       when '2'
@@ -45,3 +44,4 @@ class App
     end
   end
 end
+# rubocop:enable all
