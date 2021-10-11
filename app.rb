@@ -18,8 +18,7 @@ class App
 
   def loop
     Texts.text_intro
-    # number = gets.chomp
-    number = '3'
+     number = gets.chomp
     running = true
     puts number
     while running == true
