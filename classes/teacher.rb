@@ -1,11 +1,10 @@
-class Teacher < Person
-  def initialize(specialization)
-    super
-    @specialization = specialization
-  end
+require_relative 'person'
 
-  def play_hookey
-    "¯\(ツ)/¯"
+class Teacher < Person
+  def initialize(parameters)
+    puts parameters
+    super(parameters)
+    @specialization = parameters[:specialization]
   end
 
   def can_use_services?

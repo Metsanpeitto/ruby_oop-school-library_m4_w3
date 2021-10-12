@@ -4,13 +4,13 @@ require_relative '../classes/person'
 require_relative './student'
 
 def create_person(role, age, name, _people)
-  if role && age && name
+  return unless role && age && name
     corrector = Corrector.new
     filtered_name = corrector.correct_name(name)
     person = {}
     if role == 'teacher'
       Texts.text_cp5
-      # gets.chomp
+      gets.chomp
       user = Person.new(age, true, filtered_name)
       person = { role: role, name: user.name, id: user.id, age: user.age }
       Texts.success_teacher

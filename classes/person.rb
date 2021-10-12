@@ -1,16 +1,25 @@
-class Person
-  attr_accessor :rentals, :id, :age, :name
+require_relative 'corrector'
 
-  def initialize(age, parent_permission = true, name = 'Unknown')
+class Person
+  attr_accessor :name, :age
+  attr_reader :id
+
+  def initialize(parameters)
+    puts parameters
     @id = Time.now.to_i
-    @name = name
-    @age = age
-    @parent_permission = parent_permission
+    @name = parameters[:name] || 'Unknown'
+    @age = parameters[:age]
+    @parent_permission = parameters.fetch(:parent_permission, true)
+    @corrector = Corrector.new
     @rentals = []
   end
 
   def can_use_services?
-    is_of_age? && parent_permission == true
+    of_age? || parent_permission == true
+  end
+
+  def validate_name
+    @name = @corrector.correct_name @name
   end
 
   def add_rental(rental)
