@@ -19,9 +19,6 @@ class Student < Person
   end
 end
 
-
-
-
 x = Person.new(name: 'abdelgahnykjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkj', age: 50)
 x.validate_name
 pp x.name

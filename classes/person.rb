@@ -28,10 +28,10 @@ class Person
   def validate_name
     @name = @corrector.correct_name(name: @name)
   end
+
   private
 
   def of_age?
     @age >= 18
   end
 end
-
