@@ -1,12 +1,15 @@
+require_relative './corrector'
+
 class Person
   attr_accessor :rentals, :id, :age, :name
 
-  def initialize(age, parent_permission = true, name = 'Unknown')
+  def initialize(age:, name: 'Unknown', parent_permission: true)
     @id = Time.now.to_i
     @name = name
     @age = age
     @parent_permission = parent_permission
     @rentals = []
+    @corrector = Corrector.new
   end
 
   def can_use_services?
@@ -22,9 +25,13 @@ class Person
     @rentals = data['rentals']
   end
 
+  def validate_name
+    @name = @corrector.correct_name(name: @name)
+  end
   private
 
   def of_age?
     @age >= 18
   end
 end
+
