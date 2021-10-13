@@ -2,7 +2,9 @@ require_relative '../texts'
 
 def list_rentals
   Texts.text_r1
+  id = gets.chomp
+
   @rentals.each do |r|
-    puts "#{r.person} rented #{r.book}  on #{r.date}"
+    puts "#{r.person[:name]} rented #{r.book.title}  on #{r.date}" if r.person[:id] == id.to_i
   end
 end

@@ -21,9 +21,9 @@ def create_person(role, age, name, _people)
     parent_permission = gets.chomp
     permission = true
     permission = false if parent_permission.downcase == 'n'
-    user = Person.new(age, permission, filtered_name)
+    user = Person.new({ age: age, permission: permission, name: filtered_name })
     person = { role: role, name: user.name, id: user.id, age: user.age, parent_permission: permission, rentals: [] }
-    create_student('4F', person)
+    create_student({ classroom: '4F', person: person })
     Texts.success_student
   end
   # rubocop: enable Metrics/MethodLength

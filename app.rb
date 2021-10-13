@@ -14,6 +14,7 @@ class App
     @people = []
     @books = []
     @rentals = []
+    @classrooms = []
     loop
   end
 

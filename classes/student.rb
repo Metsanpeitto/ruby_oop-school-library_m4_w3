@@ -1,9 +1,12 @@
 require_relative 'person'
 
 class Student < Person
-  def initialize(params)
-    super
-    @classroom = params[:classroom]
+  def initialize(parameters)
+    puts 'In student'
+    p parameters[:classroom]
+    p parameters.class
+    super(parameters[:person])
+    @classroom = parameters[:classroom]
   end
 
   def play_hookey
@@ -12,7 +15,6 @@ class Student < Person
 
   # This is needed in order for classroom to create the students
   def classroom=(classroom)
-    @classroom = classroom
-    classroom.students.push << self unless classroom.students.include?(self)
+    classroom.add_student(self)
   end
 end

@@ -105,25 +105,21 @@ end
 
 def json_2_rentals(json_data)
   rentals = []
-  p @books
-  p @people
   json_data.each do |r|
     rental = Rental.new(r['date'])
-    rental.book = get_item(@books, r, 'book')
-    rental.person = get_item(@people, r, 'person')
+    rental.book = get_item(@books, r, 'book')[0]
+    rental.person = get_item(@people, r, 'person')[0]
     rentals.push(rental)
   end
   @rentals = rentals
 end
 
 def get_item(array_of_items, reserve, type)
-  if array_of_items
-    array_of_items.each do |item|
-      if type == 'person'
-        return item if item[:name] == reserve[type]
-      elsif item.title == reserve[type]
-        return item
-      end
+  array_of_items&.each do |item|
+    if type == 'person'
+      return item if item[:name] == reserve[type]
+    elsif item.title == reserve[type]
+      return item
     end
   end
 end

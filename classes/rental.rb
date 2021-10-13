@@ -9,17 +9,16 @@ class Rental
   end
 
   def book=(book)
-    @book = book
     p book
-    puts book.class
+    p book.class
+    @book = book
     book.add_rental(self)
   end
 
   def person=(person)
-    puts "person method"
+    p person
     p person.class
+    person[:rentals].push(self)
     @person = person
-    puts person
-    person.add_rental(self)
   end
 end

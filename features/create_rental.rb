@@ -14,5 +14,5 @@ def feature_create_rental
 
   book = @books[book_index.to_i]
   person = @people[people_index.to_i]
-  create_rental(book.title, person[:name])
+  create_rental(book, person)
 end
