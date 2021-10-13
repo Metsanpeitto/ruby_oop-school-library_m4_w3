@@ -17,6 +17,8 @@ class App
     loop
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop: disable Metrics/MethodLength
   def loop
     obtain_data
     Texts.text_intro
@@ -61,4 +63,6 @@ class App
       end
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop: enable Metrics/MethodLength
 end

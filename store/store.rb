@@ -87,7 +87,7 @@ end
 
 def json_2_books(json_data)
   json_data.each do |d|
-    book = Book.new(d['title'], d['author'])
+    book = Book.new({ title: d['title'], author: d['author'] })
     @books << book
   end
 end
@@ -95,10 +95,8 @@ end
 def json_2_people(json_data)
   json_data.each do |d|
     role = d['role']
-    name = d['name']
-    age = d['age']
     permission = d['permission']
-    user = Person.new(age, permission, name)
+    user = Person.new(age: d['age'], permission: permission, name: d['name'])
     person = { role: role, name: user.name, id: user.id, age: user.age, parent_permission: permission, rentals: [] }
     user.from_json(d)
     @people << person
@@ -107,12 +105,25 @@ end
 
 def json_2_rentals(json_data)
   rentals = []
-
+  p @books
+  p @people
   json_data.each do |r|
     rental = Rental.new(r['date'])
-    rental.book = r['book']
-    rental.person = r['person']
+    rental.book = get_item(@books, r, 'book')
+    rental.person = get_item(@people, r, 'person')
     rentals.push(rental)
   end
   @rentals = rentals
+end
+
+def get_item(array_of_items, reserve, type)
+  if array_of_items
+    array_of_items.each do |item|
+      if type == 'person'
+        return item if item[:name] == reserve[type]
+      elsif item.title == reserve[type]
+        return item
+      end
+    end
+  end
 end
