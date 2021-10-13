@@ -18,12 +18,31 @@ describe Person do
       expect(person.parent_permission).to(eq(true))
     end
     it 'rais an error if  age is not provided' do
-      
-      expect{Person.new}.to(raise_error())
-      
+      expect { Person.new }.to(raise_error)
+    end
+  end
+
+  describe '#can_use_services?' do
+    context 'under age' do
+      describe 'with no parent_permission' do
+        it 'should not be allowed (returns false)' do
+          person = Person.new(age: 12, parent_permission: false)
+          expect(person.can_use_services?).to(eq(false))
+        end
+      end
+      describe 'with  parent_permission' do
+        it '(returns true)' do
+          person = Person.new(age: 12, parent_permission: true)
+          expect(person.can_use_services?).to(eq(true))
+        end
+      end
     end
 
-
-
+    context 'Adult' do
+      it 'returns true' do
+        person = Person.new(age: 43)
+        expect(person.can_use_services?).to(eq(true))
+      end
+    end
   end
 end
