@@ -18,29 +18,26 @@ class App
     loop
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
-  # rubocop: disable Metrics/MethodLength
+
+  # rubocop:disable all
   def loop
     obtain_data
     Texts.text_intro
     number = gets.chomp
     running = true
 
+
     while running == true
       case number
       when '0'
         Texts.text_intro
         number = gets.chomp
-
       when '1'
-        list_books
-        number = '0'
-
+        number = list_books
       when '2'
-        list_people
-        number = '0'
-
+        number = list_people
       when '3'
+
         feature_create_person
         number = '0'
 
@@ -60,10 +57,8 @@ class App
         save_data
         running = false
       else
-        Texts.text_intro
       end
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
-  # rubocop: enable Metrics/MethodLength
 end
+# rubocop:enable all

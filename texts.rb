@@ -33,7 +33,11 @@ module Texts
     puts 'Specialization:'
   end
 
-  def self.text_cb1
+  def text_cp6
+    puts 'What is the classroom?'
+  end
+
+  def text_cb1
     puts 'What is the title of the book:'
   end
 
