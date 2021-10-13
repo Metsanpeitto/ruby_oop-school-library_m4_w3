@@ -23,7 +23,7 @@ describe Book do
     end
   end
 
-    describe '#rentals' do
+  describe '#rentals' do
     it 'returns a rentals array containing all rentals info for the given book' do
       pp @book.author
       expect(@book.rentals).to match_array([])

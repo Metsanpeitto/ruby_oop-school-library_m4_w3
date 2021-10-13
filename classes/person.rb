@@ -2,6 +2,7 @@ require_relative './corrector'
 
 class Person
   attr_accessor :rentals, :id, :age, :name
+  attr_reader :parent_permission
 
   def initialize(age:, name: 'Unknown', parent_permission: true)
     @id = Time.now.to_i
