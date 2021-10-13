@@ -18,7 +18,6 @@ class App
     loop
   end
 
-
   # rubocop:disable all
   def loop
     obtain_data

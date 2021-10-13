@@ -3,7 +3,6 @@ require_relative '../classes/corrector'
 require_relative '../classes/person'
 require_relative './student'
 
-
 # rubocop: disable Metrics/MethodLength
 def create_person(role, age, name, _people)
   return unless role && age && name
