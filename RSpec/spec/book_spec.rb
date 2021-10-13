@@ -22,4 +22,11 @@ describe Book do
       expect(@book.title).to(eq('BOOK TITLE'))
     end
   end
+
+    describe '#rentals' do
+    it 'returns a rentals array containing all rentals info for the given book' do
+      pp @book.author
+      expect(@book.rentals).to match_array([])
+    end
+  end
 end
