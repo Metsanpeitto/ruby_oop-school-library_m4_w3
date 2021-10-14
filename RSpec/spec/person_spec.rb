@@ -17,9 +17,6 @@ describe Person do
       person = Person.new(age: 33)
       expect(person.parent_permission).to(eq(true))
     end
-    it 'rais an error if  age is not provided' do
-      expect { Person.new }.to(raise_error)
-    end
   end
 
   describe '#can_use_services?' do
