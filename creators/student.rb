@@ -1,8 +1,9 @@
 require_relative '../classes/student'
 
-def create_student(classroom, person)
-  student = Student.new(classroom)
+def create_student(parameters)
+  Student.new(parameters)
+  person = parameters[:person]
   person[:role] = 'student'
-  person[:classroom] = student.classroom
+  person[:classroom] = @classroom
   person
 end

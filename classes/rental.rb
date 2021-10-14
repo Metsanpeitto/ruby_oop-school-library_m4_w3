@@ -9,12 +9,16 @@ class Rental
   end
 
   def book=(book)
+    p book
+    p book.class
     @book = book
     book.add_rental(self)
   end
 
   def person=(person)
+    p person
+    p person.class
+    person[:rentals].push(self)
     @person = person
-    person.add_rental(self)
   end
 end

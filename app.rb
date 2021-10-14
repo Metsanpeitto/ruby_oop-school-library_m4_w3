@@ -6,6 +6,7 @@ require_relative './creators/book'
 require_relative './creators/person'
 require_relative './creators/rental'
 require_relative './displayers/rentals'
+require_relative './store/store'
 
 class App
   include Texts
@@ -13,14 +14,18 @@ class App
     @people = []
     @books = []
     @rentals = []
+    @classrooms = []
     loop
   end
 
   # rubocop:disable all
   def loop
+    obtain_data
     Texts.text_intro
     number = gets.chomp
     running = true
+
+
     while running == true
       case number
       when '0'
@@ -28,18 +33,30 @@ class App
         number = gets.chomp
       when '1'
         number = list_books
+         number = '0'
       when '2'
         number = list_people
+         number = '0'
       when '3'
-        number = feature_create_person
+        feature_create_person
+        number = '0'
+
       when '4'
-        number = feature_create_book
+        feature_create_book
+        number = '0'
+
       when '5'
-        number = feature_create_rental
+        feature_create_rental
+        number = '0'
+
       when '6'
-        number = list_rentals
+        list_rentals
+        number = '0'
+
       when '7'
+        save_data
         running = false
+      else
       end
     end
   end
