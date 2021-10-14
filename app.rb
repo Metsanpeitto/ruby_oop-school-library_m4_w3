@@ -8,6 +8,7 @@ require_relative './creators/rental'
 require_relative './displayers/rentals'
 require_relative './store/store'
 
+
 class App
   include Texts
   def initialize
@@ -16,12 +17,14 @@ class App
     @rentals = []
     loop
   end
+
   # rubocop:disable all
   def loop
     obtain_data
     Texts.text_intro
     number = gets.chomp
     running = true
+
 
     while running == true
       case number
@@ -58,8 +61,11 @@ class App
         running = false
       else
         Texts.text_intro
+
       end
     end
   end
 end
+
 # rubocop:enable all
+

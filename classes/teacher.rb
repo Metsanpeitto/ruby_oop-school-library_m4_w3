@@ -8,6 +8,7 @@ class Teacher < Person
 
   def play_hookey
     "¯\(ツ)/¯"
+
   end
 
   def can_use_services?

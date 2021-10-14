@@ -8,4 +8,5 @@ def feature_create_book
   author = gets.chomp
   Texts.success_book
   create_book(title, author)
+
 end

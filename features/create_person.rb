@@ -18,6 +18,7 @@ def feature_create_person
   when '2'
     create_person('teacher', age, name, @people)
 
+
   else
     "You gave me #{option} -- I have no idea what to do with that."
   end
