@@ -16,7 +16,7 @@ class App
     @rentals = []
     loop
   end
-
+  # rubocop:disable all
   def loop
     obtain_data
     Texts.text_intro
@@ -62,3 +62,4 @@ class App
     end
   end
 end
+# rubocop:enable all

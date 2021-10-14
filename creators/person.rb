@@ -2,7 +2,7 @@ require_relative '../texts'
 require_relative '../classes/corrector'
 require_relative '../classes/person'
 require_relative './student'
-
+# rubocop:disable all
 def create_person(role, age, name, _people)
   if role && age && name
     corrector = Corrector.new
@@ -27,3 +27,4 @@ def create_person(role, age, name, _people)
     @people << person
   end
 end
+# rubocop:enable all
