@@ -22,7 +22,7 @@ class App
     Texts.text_intro
     number = gets.chomp
     running = true
-    
+
     while running == true
       case number
       when '0'
