@@ -8,6 +8,5 @@ describe Teacher do
     let(:teacher) do
       Teacher.new(age: 42, specialize: 'Q-7', name: 'T1', parent_permission: true)
     end
-
   end
 end
