@@ -8,7 +8,6 @@ require_relative './creators/rental'
 require_relative './displayers/rentals'
 require_relative './store/store'
 
-
 class App
   include Texts
   def initialize
@@ -68,4 +67,3 @@ class App
 end
 
 # rubocop:enable all
-

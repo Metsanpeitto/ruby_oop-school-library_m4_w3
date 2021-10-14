@@ -32,4 +32,3 @@ def create_person(role, age, name, _people)
 end
 
 # rubocop:enable all
-

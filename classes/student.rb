@@ -6,7 +6,6 @@ class Student < Person
   def initialize(age:, classroom:, name: 'Unknown', parent_permission: true)
     super(age: age, name: name, parent_permission: parent_permission)
     @classroom = classroom
-
   end
 
   def play_hookey
@@ -23,4 +22,3 @@ end
 x = Person.new(name: 'abdelgahnykjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkj', age: 50)
 x.validate_name
 pp x.name
-
