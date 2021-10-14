@@ -33,10 +33,11 @@ class App
         number = gets.chomp
       when '1'
         number = list_books
+         number = '0'
       when '2'
         number = list_people
+         number = '0'
       when '3'
-
         feature_create_person
         number = '0'
 
