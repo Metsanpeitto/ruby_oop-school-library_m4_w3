@@ -2,7 +2,7 @@ require './classes/book'
 
 describe Book do
   before :each do
-    @book = Book.new('BOOK TITLE', 'AUTHOR')
+    @book = Book.new({ title: 'BOOK TITLE', author: 'AUTHOR' })
   end
   describe '#initialize' do
     it 'create a new book instance based' do
