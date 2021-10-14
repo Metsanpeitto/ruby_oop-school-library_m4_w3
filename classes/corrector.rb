@@ -3,6 +3,6 @@ class Corrector
     first_letter = name[0].capitalize
     str = name
     str[0] = first_letter
-    str[0, 11]
+    str[0, 10]
   end
 end
