@@ -21,11 +21,14 @@ def create_person(role, age, name, _people)
       permission = true
       permission = false if parent_permission.downcase == 'n'
       user = Person.new(age, permission, filtered_name)
-      person = { role: role, name: user.name, id: user.id, age: user.age }
+
+      person = { role: role, name: user.name, id: user.id, age: user.age, parent_permission: permission, rentals: [] }
+
       create_student('4F', person)
       Texts.success_student
     end
     @people << person
   end
 end
+
 # rubocop:enable all
